@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+
+</head>
+<body>
+    <h1>This is the homepage</h1>
+    {% for pet in pets %}
+    <div>
+    <img src="{{pet.photo_url}}">
+    <h1><a href="/{{pet.pet_id}}">{{pet.name }}</a></h1>
+    {% if pet.available == true %}
+        <h3>is adoptable!</h3>
+    {% endif %}
+    </div>
+    {% endfor %}
+    
+
+</body>
+</html>
